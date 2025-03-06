@@ -1,10 +1,12 @@
 import javax.swing.text.AttributeSet;
 import java.sql.SQLOutput;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
+import java.time.LocalDateTime;
+import java.util.*;
+import java.util.stream.Collectors;
+@FunctionalInterface
+interface sums{
+    void adds(int a, int b);
+}
 class Solutions{
 
     public static void reverseString(String s){
@@ -148,12 +150,6 @@ class Solutions{
 
 
 
-
-
-
-
-
-
 public class Main {
     public static void main(String[] args) {
 //        Solutions.reverseString("SANDEEPa");
@@ -169,7 +165,93 @@ public class Main {
 //        Solutions.checkArmstrong(152);
 //        int[] sol = Solutions.twoSum(nums, 6);
 //        System.out.println(Arrays.toString(sol));
-        Solutions.sortString("hi, i , am ,sandeep");
+        //Solutions.sortString("hi, i , am ,sandeep");
+
+        List<Integer> numbers = Arrays.asList(33, 21, 65,11,33);
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+       // numbers.stream().filter(n-> n%2==0).toList().forEach(s-> System.out.println(s));// even nums
+        //System.out.println(numbers.stream().mapToInt(n-> n).max().getAsInt());// max
+      //  System.out.println(numbers.stream().mapToInt(n-> n).sum());// sum
+       // names.stream().map(String::toUpperCase).toList().forEach(System.out::println);// touppercase
+        //numbers.stream().sorted(Comparator.naturalOrder()).toList().forEach(System.out::println); // sort
+        //System.out.println(numbers.stream().count());// count
+       // numbers.stream().distinct().toList().forEach(System.out::println);// distinct
+        //System.out.println(numbers.stream().findFirst().get());// findany
+        List<String> fullNames = Arrays.asList("Alice Johnson", "Bob Harris", "Charlie Lou");
+        //fullNames.stream().map(n-> n.split(" ")[0]).toList().forEach(System.out::println);//fisrtname
+        //System.out.println(numbers.stream().allMatch(n-> n>0));// allmatch
+        //System.out.println(numbers.stream().noneMatch(n-> n<0));// nonematch
+        List<List<Integer>> nestedNumbers = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4, 5));//flatmap
+
+       // nestedNumbers.stream().flatMap(List::stream).toList().forEach(System.out::println);// flatmap
+        //numbers.stream().skip(3).toList().forEach(System.out::println);//limit and skip//
+
+//        Set<Integer> sets = numbers.stream().collect(Collectors.toSet());
+//        System.out.println(sets);
+//
+//        IntSummaryStatistics summ = numbers.stream().mapToInt(Integer::valueOf).summaryStatistics();
+//        System.out.println(summ); //summary
+//        List<Integer> myList = Arrays.asList(10,15,8,49,25,98,32);
+//
+//        myList.stream().map(n-> String.valueOf(n)).filter(n-> n.startsWith("1")).toList().forEach(System.out::println);// startswith
+//        List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15);
+        Set<Integer> sets = new HashSet<>();
+//                myList.stream().filter(n-> !sets.add(n)).collect(Collectors.toSet()).forEach(System.out::println); // duplicate
+
+            String s = "ssandeep";
+       // System.out.println(s.chars().mapToObj(n-> (char) n).filter(n-> s.indexOf(n) == s.lastIndexOf(n)).findFirst().get());// first non repeating char
+
+        //System.out.println(numbers.stream().anyMatch(n-> !sets.add(n)));// any dupicates
+
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//        System.out.println(localDateTime); // current datetime
+        //Java 8 program to perform cube on list elements and filter numbers greater than 50.
+//        List<Integer> integerList = Arrays.asList(4,5,6,7,1,2,3);
+//        integerList.stream().map(n-> Math.pow(n,3)).filter(n-> n>50).map(n-> Math.round(n)).toList().forEach(System.out::println);
+         // SORT HASHMAP
+//        Map<Integer, String> mp = new HashMap<>();
+//        mp.put(4, "banana");
+//        mp.put(2, "apple");
+//        mp.put(1, "orange");
+//        mp.put(3, "mango");
+//
+//        Map<Integer, String> newMap = mp.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1,e2) -> e1, LinkedHashMap::new));
+//        System.out.println(newMap);
+//
+//        Map<Integer, String> m = new HashMap<>();
+//        mp.put(4, "banana");
+//        mp.put(2, "apple");
+//        mp.put(1, "orange");
+//        mp.put(3, "mango");
+//
+//        Map<Integer, String > m1 = m.entrySet().stream().sorted(Map.Entry.comparingByKey()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1,e2) ->e1, LinkedHashMap::new));
+
+///////   TOP FREQUENT WORDS
+//        String paragraph = "java cracking java java by learning Java ";
+//        List<String> words = Arrays.stream(paragraph.toLowerCase().split("\\s+")).toList();
+
+        sums s1 = (a,b) -> System.out.println(a+b);
+
+//BUBBLE SORT
+        s1.adds(2,3);
+
+        int[] nums = {34,21,11,23,45,32,98};
+
+        for(int i=0; i<nums.length-1; i++){
+            for(int j=0; j<nums.length-i-1; j++ ){
+                if(nums[j] > nums[j+1]){
+                    int temp = nums[j];
+                    nums[j] = nums[j+1];
+                    nums[j+1] = temp;
+                }
+            }
+        }
+        for(int i:nums){
+            System.out.println(i);
+        }
+
+
+
 
     }
 }

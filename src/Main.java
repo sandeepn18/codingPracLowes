@@ -1,3 +1,6 @@
+import factory.FactoryPattern;
+
+
 import javax.swing.text.AttributeSet;
 import java.sql.SQLOutput;
 import java.time.LocalDateTime;
@@ -233,22 +236,21 @@ public class Main {
         sums s1 = (a,b) -> System.out.println(a+b);
 
 //BUBBLE SORT
-        s1.adds(2,3);
-
-        int[] nums = {34,21,11,23,45,32,98};
-
-        for(int i=0; i<nums.length-1; i++){
-            for(int j=0; j<nums.length-i-1; j++ ){
-                if(nums[j] > nums[j+1]){
-                    int temp = nums[j];
-                    nums[j] = nums[j+1];
-                    nums[j+1] = temp;
-                }
-            }
-        }
-        for(int i:nums){
-            System.out.println(i);
-        }
+//        s1.adds(2,3);
+//
+//        int[] nums = {34,21,11,23,45,32,98};
+//
+//        for(int i=0; i<nums.length-1; i++){
+//            for(int j=0; j<nums.length-i-1; j++ ){
+//                if(nums[j] > nums[j+1]){
+//                    int temp = nums[j];
+//                    nums[j] = nums[j+1];
+//                    nums[j+1] = temp;
+//                }
+//            }
+//        }
+//        for(int i:nums){
+//            System.out.println(i);
 
 
 
